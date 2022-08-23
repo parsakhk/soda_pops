@@ -3,7 +3,6 @@ package net.parsa_pouriya.soda_pops.item;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -16,11 +15,12 @@ public class ModItems {
             DeferredRegister.create(ForgeRegistries.ITEMS, SodaPops.MOD_ID);
 
     public static final RegistryObject<Item> SODA_POP_CAN = ITEMS.register("soda_pop_can",
-            () -> new Item(new Item.Properties().stacksTo(8).tab(CreativeModeTab.TAB_MISC)));
+            () -> new Item(new Item.Properties().stacksTo(8).tab(ModCreativeModeTab.SODA_POPS_TAB)));
 
     public static final RegistryObject<Item> APPLE_SODA_POP = ITEMS.register("apple_soda_pop",
-            () -> new Item(new Item.Properties().stacksTo(1).tab(CreativeModeTab.TAB_MISC)
-                    .food(new FoodProperties.Builder().effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 500, 0), 0.16f).nutrition(2).build())));
+            () -> new Item(new Item.Properties().stacksTo(1).tab(ModCreativeModeTab.SODA_POPS_TAB)
+                    .food(new FoodProperties.Builder()
+                            .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 500, 0), 0.16f).nutrition(2).build())));
 
 
     public static void register(IEventBus eventBus) {

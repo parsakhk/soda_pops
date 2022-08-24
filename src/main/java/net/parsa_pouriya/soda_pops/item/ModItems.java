@@ -9,6 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.parsa_pouriya.soda_pops.SodaPops;
+import net.parsa_pouriya.soda_pops.item.custom.AppleSodaPopsItem;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -18,7 +19,7 @@ public class ModItems {
             () -> new Item(new Item.Properties().stacksTo(8).tab(ModCreativeModeTab.SODA_POPS_TAB)));
 
     public static final RegistryObject<Item> APPLE_SODA_POP = ITEMS.register("apple_soda_pop",
-            () -> new Item(new Item.Properties().stacksTo(1).tab(ModCreativeModeTab.SODA_POPS_TAB)
+            () -> new AppleSodaPopsItem(new Item.Properties().stacksTo(1).tab(ModCreativeModeTab.SODA_POPS_TAB)
                     .food(new FoodProperties.Builder()
                             .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 500, 0), 0.16f).nutrition(2).build())));
 

@@ -22,6 +22,10 @@ public class ModItems {
                     .food(new FoodProperties.Builder()
                             .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 500, 0), 0.16f).nutrition(2).build())));
 
+    public static final RegistryObject<Item> SODA_WATER_BOTTLE = ITEMS.register("soda_water_bottle",
+            () -> new Item(new Item.Properties().stacksTo(1).tab(ModCreativeModeTab.SODA_POPS_TAB)));
+
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
